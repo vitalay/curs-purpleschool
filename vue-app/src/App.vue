@@ -1,16 +1,11 @@
 <script setup>
-let a = 10;
-let b = 'Привет';
-let c = true;
-
-let e = "<a href='/'>Сылка</a>"
+const color = "dark";
 </script>
 
 <template>
-  <header>{{ a + ' '  + b + ' ' + c}}</header>
-  <main>{{b}}</main>
-  <div v-html="e"></div>
-  <footer>{{ c }}</footer>
+  <header>logo</header>
+  <main :color>kontent</main>
+
 </template>
 
 <style scoped></style>
