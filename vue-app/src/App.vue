@@ -1,20 +1,37 @@
 <script setup>
 import Button from "./components/Button.vue";
+import Stat from "./components/Stat.vue";
+import IconLocation from "./icons/IconLocation.vue";
+const data = {
+  label: "Влажность",
+  stat: "15%",
 
-
+}
 
 </script>
 
 <template>
-  <header>logo</header>
-  <Button>
-    <template #icon>+</template>
-    <template #text>-</template>
-    Сохранить</Button>
-  <main>Контент</main>
 
-  <footer>Подвал</footer>
+
+  <main class="main">
+
+    <Stat v-bind="data" />
+    <Stat label="Осадки" stat="10%" />
+    <Button>
+      <IconLocation />
+      Сохранить
+    </Button>
+  </main>
+
+
 
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  padding: 60px 50px;
+  border-radius: 25px;
+  background-color: var(--color-bg-main);
+  display: grid;
+}
+</style>
