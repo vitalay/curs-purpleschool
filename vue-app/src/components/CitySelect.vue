@@ -4,7 +4,11 @@ import Button from "./Button.vue";
 import Input from "./Input.vue";
 
 const emit = defineEmits({
-  "selectCity": null,
+
+  selectCity(payload){
+      // console.log(`ошибка: ${payload}`)
+    return payload;
+  }
 });
 
 function select() {
