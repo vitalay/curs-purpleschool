@@ -3,10 +3,12 @@ import IconLocation from "../icons/IconLocation.vue";
 import Button from "./Button.vue";
 import Input from "./Input.vue";
 
-const emit = defineEmits(["select-city"]);
+const emit = defineEmits({
+  "selectCity": null,
+});
 
 function select() {
-  emit("select-city", "Moscow");
+  emit("selectCity", "London");
 
 }
 </script>
