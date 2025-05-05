@@ -1,7 +1,8 @@
 <script setup>
-import Button from "./components/Button.vue";
+import CitySelect from "./components/CitySelect.vue";
 import Stat from "./components/Stat.vue";
-import IconLocation from "./icons/IconLocation.vue";
+
+
 const data = {
   label: "Влажность",
   stat: "15%",
@@ -14,13 +15,10 @@ const data = {
 
 
   <main class="main">
-
+    
     <Stat v-bind="data" />
     <Stat label="Осадки" stat="10%" />
-    <Button>
-      <IconLocation />
-      Сохранить
-    </Button>
+   <CitySelect />
   </main>
 
 

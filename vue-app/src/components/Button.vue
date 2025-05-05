@@ -23,6 +23,9 @@
   font-family: var(--font);
   color: var(--primary);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
 
 }
 
