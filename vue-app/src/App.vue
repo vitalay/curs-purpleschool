@@ -1,27 +1,55 @@
 <script setup>
+// import My from "./components/My.vue";
 import CitySelect from "./components/CitySelect.vue";
 import Stat from "./components/Stat.vue";
+
 import { computed, ref } from "vue";
 
+
+
+// const myy = {
+//   mi: 'Moskov',
+//   ci: '80%',
+ 
+// }
 
 let savedCity = ref("Moskov");
 
 let data = ref({
-  humidity: 90
-})
+  humidity: 90,
+  rain: 0,
+  wind: 3
+});
+
 
 // let dataModified = ref({
 //   label: "Влажнасть",
 //   stat: "90%"
 // });
 
+
+
 const dataModified = computed(() => {
 
-  return {
+  return [
+    {
     label: "Влажнасть",
     stat: data.value.humidity + "%",
-  };
+    },
+  {
+    label: "Осадки",
+    stat: data.value.rain + "%",
+    },
+  {
+    label: "Ветер",
+    stat: data.value.wind + "км/ч",
+    },
+  ];
+
 });
+
+
+
 
 
 function getCity(City) {
@@ -52,11 +80,12 @@ function getCity(City) {
 
 
   <main class="main">
-    {{ savedCity }}
-   
-    <Stat v-bind="dataModified" />
-    <Stat v-bind="data" />
-    <Stat label="Осадки" stat="10%" />
+    <div id="city"> {{ savedCity }} </div>
+    <!-- <My @citi-select="getCit" />
+    <My :mi="myy.mi" :ci="myy.ci" />
+    <My mi="жопа" ci="100%" /> -->
+    <Stat v-for="item in dataModified" v-bind="item" :key="item.label" />
+
     <CitySelect @select-city="getCity" />
   </main>
 

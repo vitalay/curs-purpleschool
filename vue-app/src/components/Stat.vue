@@ -2,18 +2,18 @@
 const { label , stat } = defineProps({
   label: {
     type: String,
-    required: true,
+   
   },
   stat: {
     type: String,
-    required: true,
+    
 }
 });
 
 </script>
 <template>
   <div class="stat">
-    <div class="stat-name">{{ label}}</div>
+    <div class="stat-name">{{ label }}</div>
     <div class="stat-value">{{ stat }}</div>
   </div>
 </template>

@@ -26,6 +26,9 @@
   display: flex;
   align-items: center;
   gap: 9px;
+  height: 53px;
+  width: 100%;
+  justify-content: center;
 
 }
 
